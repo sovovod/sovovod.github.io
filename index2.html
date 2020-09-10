@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+
+  <body>
+	<nav class="navbar navbar-light bg-light navbar-expand-md">
+	<img src="logo2.png" alt="" height="50">
+	 <a href="#" class="navbar-brand">   
+<!-- 		<img src="logo.png" alt="" height="35"> <a href="#" class="navbar-brand"> 
+		<span style="font-size: 25px"> <b> Панч </b><span style="font-family:Courier; color:Blue; font-size: 28px"> news </span>
+		<span style="font-size: 12px"> лента, которую мы заслужили </span>-->	
+	</a>
+	    <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index1.html">назад</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://punchme.best">punchlime</a>
+            </li>
+        </ul>
+	</nav>
+
+
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+			<h2 class="display-6">лучший игрок всех времен и народов</h2>
+<!-- 			<p class="lead">новости, которые еще можно читать</p> -->
+		</div>
+
+		<div class="container">
+		<script src="https://unpkg.com/vue"></script>
+			<div class="row">
+				<div class="col-sm-12 col-lg-12">
+					<div class="card">
+						<img class="card-img-top" alt="Card header image" src="sdr.jpg">
+						<div class="card-body"> 
+							<p> на этой странице собраны лучшие ответы игроков <a href="http:punchme.best">punchlime</a></p>
+							<a class="btn btn-primary" href="http:punchme.best" role="button"> Я тоже хочу запанчить </a>
+						</div> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script src="https://unpkg.com/vue"></script>
+
+<script>
+ const app = new Vue({
+  el: '#app',
+  data: {
+   punches: []
+  },
+  created () {
+   fetch('https://punchme.best/solo/get_top?ago_sec=86400&nick=')
+   .then(response => response.json())
+   .then(json => {this.punches = json})
+  }
+ })
+</script>
+
+</body>
+</html>
